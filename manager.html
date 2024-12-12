@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Менеджер</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Торговая платформа</h1>
+  </header>
+  <main>
+    <h2>Вам доступны следующие функции:</h2>
+
+    <!-- Просмотреть прайс-лист -->
+    <section>
+      <h3>Просмотреть прайс-лист</h3>
+      <button class="button">Открыть прайс-лист</button>
+    </section>
+
+    <!-- Запросить информацию о товаре -->
+    <section>
+        <h3>Запросить информацию о товаре</h3>
+        <form>
+          <label for="product-id">ID товара:</label>
+          <input type="text" id="product-id" name="product-id">
+          <label for="product-name">Наименование товара:</label>
+          <input type="text" id="product-name" name="product-name">
+          <button type="submit" class="button">Поиск товара</button>
+        </form>
+        <p>*Заполните одно или оба из полей для поиска товара.</p>
+      </section>
+
+    <!-- Добавить информацию о товаре -->
+    <section>
+      <h3>Добавить информацию о товаре</h3>
+      <form>
+        <label for="product-name">Наименование товара:</label>
+        <input type="text" id="product-name" name="product-name" required>
+        <label for="category">Категория:</label>
+        <input type="text" id="category" name="category" required>
+        
+        <!-- Цена: неотрицательное число с 2 знаками после запятой -->
+        <label for="price">Стоимость:</label>
+        <input type="number" id="price" name="price" min="0" step="0.01" required placeholder="0.00">
+        
+        <!-- Количество: неотрицательное целое число больше нуля -->
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" name="quantity" min="0" required placeholder="0">
+        
+        <button type="submit" class="button">Добавить товар</button>
+      </form>
+    </section>
+
+    <!-- Обновить информацию о товаре -->
+    <section>
+      <h3>Обновить информацию о товаре</h3>
+      <form>
+        <label for="product-id">ID товара:</label>
+        <input type="text" id="product-id" name="product-id" required>
+        <button type="button" class="button">Найти товар</button>
+        <!-- В будущем здесь будут появляться поля для редактирования -->
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Торговая платформа</p>
+  </footer>
+</body>
+</html>

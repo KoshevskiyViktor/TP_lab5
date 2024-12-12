@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Торговая платформа</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      margin: 0;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .role-selection {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .role-selection button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 200px;
+      text-align: center;
+    }
+
+    .role-selection button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Цвета для разных кнопок */
+    .client {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .analyst {
+      background-color: #FF9800;
+      color: white;
+    }
+
+    .manager {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .admin {
+      background-color: #F44336;
+      color: white;
+    }
+
+    /* Для кнопок при наведении */
+    .role-selection button:hover.client {
+      background-color: #45a049;
+    }
+
+    .role-selection button:hover.analyst {
+      background-color: #e68900;
+    }
+
+    .role-selection button:hover.manager {
+      background-color: #1e88e5;
+    }
+
+    .role-selection button:hover.admin {
+      background-color: #e53935;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Торговая платформа</h1>
+  </header>
+  <main>
+    <h2>Выберите роль:</h2>
+    <div class="role-selection">
+      <button onclick="window.location.href='login.html?role=client'" class="client">Клиент</button>
+      <button onclick="window.location.href='login.html?role=analyst'" class="analyst">Аналитик</button>
+      <button onclick="window.location.href='login.html?role=manager'" class="manager">Менеджер</button>
+      <button onclick="window.location.href='login.html?role=admin'" class="admin">Администратор</button>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Торговая платформа</p>
+  </footer>
+</body>
+</html>

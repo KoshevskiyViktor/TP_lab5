@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход в систему</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Торговая платформа</h1>
+  </header>
+
+  <main>
+    <h2>Вход в систему</h2>
+    <form id="loginForm">
+      <!-- Поле для выбора роли скрыто, будет использован параметр из URL -->
+      <input type="hidden" id="role" name="role">
+
+      <label for="username">Логин:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit" class="button">Войти</button>
+    </form>
+
+    <div id="role-specific-functions"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Торговая платформа</p>
+  </footer>
+
+  <script>
+    // Определяем роль через параметр URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const role = urlParams.get('role');
+    document.getElementById('role').value = role;
+
+    // Функции, доступные для каждой роли
+    const roleSpecificFunctions = {
+      client: `
+        <h3>Добро пожаловать, Клиент</h3>
+        <p>Доступные функции:</p>
+        <ul>
+          <li><strong>Просмотр прайс-листа:</strong> Получите актуальный прайс-лист с товарами.</li>
+          <li><strong>Поиск товара:</strong> Найдите товар по ID или названию.</li>
+          <li><strong>Создать заказ:</strong> Оформите заказ на товары.</li>
+        </ul>
+      `,
+      analyst: `
+        <h3>Добро пожаловать, Аналитик</h3>
+        <p>Доступные функции:</p>
+        <ul>
+          <li><strong>Просмотр прайс-листа:</strong> Получите актуальный прайс-лист с товарами.</li>
+          <li><strong>Поиск товара:</strong> Найдите товар по ID или названию.</li>
+          <li><strong>Запрос информации о товаре:</strong> Получите информацию по конкретному товару.</li>
+          <li><strong>Запрос списка клиентов:</strong> Получите список клиентов на заданную дату.</li>
+          <li><strong>Запрос динамики изменения стоимости товара:</strong> Посмотрите, как менялась цена товара в заданный период.</li>
+        </ul>
+      `,
+      manager: `
+        <h3>Добро пожаловать, Менеджер</h3>
+        <p>Доступные функции:</p>
+        <ul>
+          <li><strong>Просмотр прайс-листа:</strong> Получите актуальный прайс-лист с товарами.</li>
+          <li><strong>Запрос информации о товаре:</strong> Найдите товар по ID или названию.</li>
+          <li><strong>Добавление товара:</strong> Добавьте новые товары в каталог.</li>
+          <li><strong>Обновление информации о товаре:</strong> Обновите информацию об уже существующем товаре.</li>
+        </ul>
+      `,
+      admin: `
+        <h3>Добро пожаловать, Администратор</h3>
+        <p>Доступные функции:</p>
+        <ul>
+          <li><strong>Просмотр прайс-листа:</strong> Получите актуальный прайс-лист с товарами.</li>
+          <li><strong>Поиск товара:</strong> Найдите товар по ID или названию.</li>
+          <li><strong>Заблокировать пользователя:</strong> Блокируйте пользователей по ID.</li>
+          <li><strong>Аудит системы:</strong> Проведите аудит системы для выявления ошибок или нарушений.</li>
+        </ul>
+      `
+    };
+
+    // Добавление функций для выбранной роли
+    document.getElementById('role-specific-functions').innerHTML = roleSpecificFunctions[role] || 'Роль не найдена';
+
+    // Обработка формы входа
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Перенаправление на соответствующую страницу по роли после успешного входа
+      window.location.href = `${role}.html`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Администратор</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>Торговая платформа</h1>
+    </div>
+  </header>
+
+  <!-- MAIN SECTION -->
+  <main>
+    <h2>Добро пожаловать, Администратор</h2>
+    <h2>Вам доступны следующие функции</h2>
+
+    <!-- Просмотреть прайс-лист -->
+    <section>
+      <h3>Просмотреть прайс-лист</h3>
+      <button class="button">Открыть прайс-лист</button>
+    </section>
+
+    <!-- Запросить информацию о товаре -->
+    <section>
+      <h3>Запросить информацию о товаре</h3>
+      <form>
+        <label for="product-id">ID товара:</label>
+        <input type="text" id="product-id" name="product-id">
+        <label for="product-name">Наименование товара:</label>
+        <input type="text" id="product-name" name="product-name">
+        <button type="submit" class="button">Поиск товара</button>
+      </form>
+      <p>*Заполните одно или оба из полей для поиска товара.</p>
+    </section>
+    <!-- Функции администратора -->
+    <section>
+      <h3>Заблокировать пользователя</h3>
+      <form>
+        <label for="block-user">ID пользователя:</label>
+        <input type="text" id="block-user" placeholder="Введите ID пользователя">
+        <button onclick="showAlert('Пользователь заблокирован')">Заблокировать пользователя</button>
+      </form>
+      <h3>Провести аудит системы</h3>
+      <button onclick="showAlert('Выполняется аудит системы')">Аудит системы</button>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Торговая платформа</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function showAlert(message) {
+      alert(message);
+    }
+  </script>
+</body>
+</html>

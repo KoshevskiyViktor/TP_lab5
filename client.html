@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Клиент</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Торговая платформа</h1>
+    </div>
+  </header>
+
+  <main>
+    <h2>Добро пожаловать, Клиент</h2>
+    <section>
+      <h2>Вам доступны следующие функции:</h2>
+      <h3>Просмотр прайс-листа</h3>
+      <button onclick="showAlert('Просмотр прайс-листа')">Просмотреть прайс-лист</button>
+      <form>
+        <h3>Запросить информацию о товаре</h3>
+        <label for="product-id">ID товара:</label>
+        <input type="text" id="product-id" placeholder="Введите ID">
+        <label for="product-name">Название товара:</label>
+        <input type="text" id="product-name" placeholder="Введите название">
+        <button onclick="showAlert('Поиск товара')">Поиск товара</button>
+      </form>
+      <p>*Заполните одно или оба из полей для поиска товара.</p>
+    </section>
+    <section>
+      <h3>Создать заказ</h3>
+      <button onclick="showAlert('Создание заказа')">Создать заказ</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Торговая платформа</p>
+    </div>
+  </footer>
+
+  <script>
+    function showAlert(message) {
+      alert(message);
+    }
+  </script>
+</body>
+</html>
